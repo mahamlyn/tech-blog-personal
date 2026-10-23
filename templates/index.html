@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% from "_macros.html" import post_card %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">$ whoami</p>
+  <h1>Building, breaking and writing it down.</h1>
+  <p class="lead">{{ site.tagline }}</p>
+  <div class="hero-cta">
+    <a class="btn" href="{{ url_for('blog_index') }}">Read the blog</a>
+    <a class="btn btn-ghost" href="{{ url_for('about') }}">About me</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title"><span aria-hidden="true">#</span> Latest posts</h2>
+  {% if posts %}
+  <div class="grid">
+    {% for post in posts %}{{ post_card(post) }}{% endfor %}
+  </div>
+  <p class="more"><a href="{{ url_for('blog_index') }}">All posts &rarr;</a></p>
+  {% else %}
+  <p class="muted">No posts yet. Add a markdown file to <code>content/posts/</code>.</p>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "_macros.html" import post_card %}
+
+{% block title %}Blog - {{ site.name }}{% endblock %}
+
+{% block content %}
+<h1 class="page-title"><span aria-hidden="true">#</span> Blog</h1>
+
+{% if tags %}
+<ul class="tags tag-cloud" aria-label="Browse by tag">
+  {% for t in tags %}
+  <li><a class="chip" href="{{ url_for('tag', slug=t.slug) }}">#{{ t.name }} <span class="count">{{ t.count }}</span></a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<div class="grid">
+  {% for post in posts %}{{ post_card(post) }}{% else %}
+  <p class="muted">No posts yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

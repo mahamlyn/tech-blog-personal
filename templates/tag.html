@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% from "_macros.html" import post_card %}
+
+{% block title %}#{{ tag.name }} - {{ site.name }}{% endblock %}
+
+{% block content %}
+<h1 class="page-title"><span aria-hidden="true">#</span>{{ tag.name }}</h1>
+<p class="muted"><a href="{{ url_for('blog_index') }}">&larr; All posts</a></p>
+
+<div class="grid">
+  {% for post in posts %}{{ post_card(post) }}{% endfor %}
+</div>
+{% endblock %}

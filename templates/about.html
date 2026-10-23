@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ about.title }} - {{ site.name }}{% endblock %}
+
+{% block content %}
+<article class="post">
+  <h1 class="page-title"><span aria-hidden="true">#</span> {{ about.title }}</h1>
+  <div class="about{% if about.image %} has-photo{% endif %}">
+    {% if about.image %}
+    <img class="about-photo" src="{{ about.image }}" alt="{{ about.image_alt }}" width="320" height="320">
+    {% endif %}
+    <div class="prose">{{ about.html|safe }}</div>
+  </div>
+</article>
+{% endblock %}

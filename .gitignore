@@ -1,0 +1,21 @@
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+.env
+pyvenv.cfg
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated output
+build/
+
+# Local site runner state
+scripts/.site.*

@@ -1,0 +1,26 @@
+{% macro tag_chips(tags) %}
+  {% if tags %}
+  <ul class="tags" aria-label="Tags">
+    {% for t in tags %}
+    <li><a class="chip" href="{{ url_for('tag', slug=t.slug) }}">#{{ t.name }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_meta(post) %}
+  <p class="meta">
+    <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime('%d %b %Y') }}</time>
+    <span aria-hidden="true">/</span>
+    <span>{{ post.reading_time }} min read</span>
+  </p>
+{% endmacro %}
+
+{% macro post_card(post) %}
+  <article class="card">
+    {{ post_meta(post) }}
+    <h3><a href="{{ url_for('post', slug=post.slug) }}">{{ post.title }}</a></h3>
+    <p>{{ post.excerpt }}</p>
+    {{ tag_chips(post.tags) }}
+  </article>
+{% endmacro %}

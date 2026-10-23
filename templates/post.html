@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "_macros.html" import tag_chips, post_meta %}
+
+{% block title %}{{ post.title }} - {{ site.name }}{% endblock %}
+{% block description %}{{ post.excerpt }}{% endblock %}
+
+{% block content %}
+<article class="post">
+  <header class="post-header">
+    {{ post_meta(post) }}
+    <h1>{{ post.title }}</h1>
+    {{ tag_chips(post.tags) }}
+  </header>
+
+  <div class="prose">{{ post.content|safe }}</div>
+
+  <nav class="post-nav" aria-label="More posts">
+    {% if newer %}<a href="{{ url_for('post', slug=newer.slug) }}"><span class="muted">&larr; Newer</span>{{ newer.title }}</a>{% endif %}
+    {% if older %}<a class="next" href="{{ url_for('post', slug=older.slug) }}"><span class="muted">Older &rarr;</span>{{ older.title }}</a>{% endif %}
+  </nav>
+</article>
+{% endblock %}
