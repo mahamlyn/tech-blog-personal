@@ -1,4 +1,6 @@
-# tech-blog-personal
+![Repository banner](images/repo-banner.png)
+
+# devsecops.log
 
 A personal tech blog built from markdown posts. Flask is used for development and Frozen-Flask builds a static site for Cloudflare Pages. It has a dark/light theme (dark by default), an about page, client-side search and a mobile-friendly layout.
 
