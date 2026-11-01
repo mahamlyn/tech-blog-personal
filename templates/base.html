@@ -6,6 +6,7 @@
   <title>{% block title %}{{ site.name }} - {{ site.tagline }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ site.tagline }}{% endblock %}">
   <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
   <script>
     (function () {
       var root = document.documentElement;
