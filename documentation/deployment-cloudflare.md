@@ -1,7 +1,29 @@
 # Deploying to Cloudflare Pages
 
-## Settings
-Create a Pages project connected to the git repository and use:
+## Deploying with GitHub Actions (manual)
+The workflow [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) builds the site and uploads `build/` to the `devsecopslog` Pages project (a Direct Upload project). It only runs when started by hand; pushes do not deploy.
+
+### One-time setup
+Add these repository secrets in GitHub under Settings > Secrets and variables > Actions:
+
+| Secret | Where to get it |
+| --- | --- |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare > My Profile > API Tokens. Use a custom token with Account > Cloudflare Pages > Edit |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare > Workers & Pages overview |
+
+If the public URL changes (for example a custom domain), update `SITE_URL` in the workflow.
+
+### Running a deploy
+1. In GitHub open the Actions tab and select **Build and deploy to Cloudflare Pages**.
+2. Click **Run workflow**, choose the `main` branch and confirm.
+3. The workflow installs dependencies, runs `python build.py` and runs `wrangler pages deploy build`.
+4. Check the result at https://devsecopslog.pages.dev.
+
+The repository root must be this folder (`tech-blog-personal`). If it is a parent repository, move the workflow there and add `working-directory: tech-blog-personal` to the steps.
+
+## Settings for Git-connected Pages projects
+These apply only if you use a Pages project connected to the git repository instead of the workflow above. Direct Upload projects cannot be switched to git integration.
+
 
 | Setting | Value |
 | --- | --- |
