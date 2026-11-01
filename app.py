@@ -17,7 +17,7 @@ POSTS_DIR = CONTENT_DIR / "posts"
 
 SITE = {
     "name": "devsecops.log",
-    "tagline": "Notes on code, infrastructure and tinkering.",
+    "tagline": "Exploring AI, automation, infrastructure and everything I learn along the way.",
     "url": os.environ.get("SITE_URL", "https://example.pages.dev").rstrip("/"),
 }
 
