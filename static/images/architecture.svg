@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 500" role="img" aria-label="Architecture: markdown and VS Code with Copilot are pushed to a Git repository; a manually triggered GitHub Actions runner builds the static site with Flask and deploys it with Wrangler to Cloudflare Pages, which serves the reader's browser">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#3ddc97"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; text-anchor: middle; }
+    .title { font-size: 26px; fill: #d7e0ec; font-weight: 700; }
+    .group { font-size: 14px; fill: #3ddc97; letter-spacing: 2px; }
+    .panel { fill: #0f1520; stroke: #223046; stroke-width: 1.5; }
+    .runner { fill: #0b0f14; stroke: #5ac8fa; stroke-width: 1.5; }
+    .runner-label { font-size: 12px; fill: #5ac8fa; letter-spacing: 2px; }
+    .box { fill: #172131; stroke: #3ddc97; stroke-width: 1.5; }
+    .label { font-size: 16px; fill: #d7e0ec; }
+    .sub { font-size: 14px; fill: #8aa0b8; }
+    .note { font-size: 12px; fill: #8aa0b8; }
+    .flow { stroke: #3ddc97; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .planned { fill: none; stroke: #5ac8fa; stroke-width: 1.5; stroke-dasharray: 6 5; }
+    .planned-text { font-size: 14px; fill: #5ac8fa; }
+  </style>
+
+  <rect width="1250" height="500" fill="#0b0f14"/>
+  <text class="title" x="625" y="60"><tspan fill="#3ddc97">&gt;</tspan> Personal tech blog</text>
+
+  <!-- Group headings -->
+  <text class="group" x="125" y="118">WRITE</text>
+  <text class="group" x="505" y="118">GITHUB</text>
+  <text class="group" x="895" y="118">CLOUDFLARE</text>
+  <text class="group" x="1125" y="118">READER</text>
+
+  <!-- Panels -->
+  <rect class="panel" x="40" y="130" width="170" height="260" rx="14"/>
+  <rect class="panel" x="280" y="130" width="450" height="260" rx="14"/>
+  <rect class="panel" x="810" y="130" width="170" height="260" rx="14"/>
+  <rect class="panel" x="1040" y="130" width="170" height="260" rx="14"/>
+
+  <!-- Write -->
+  <rect class="box" x="55" y="160" width="140" height="80" rx="10"/>
+  <text class="label" x="125" y="195">Markdown</text>
+  <text class="sub" x="125" y="217">posts</text>
+  <rect class="box" x="55" y="280" width="140" height="80" rx="10"/>
+  <text class="label" x="125" y="315">VS Code</text>
+  <text class="sub" x="125" y="337">+ Copilot</text>
+
+  <!-- GitHub: repository and Actions runner -->
+  <rect class="box" x="300" y="220" width="110" height="80" rx="10"/>
+  <text class="label" x="355" y="255">Git</text>
+  <text class="sub" x="355" y="277">repository</text>
+
+  <rect class="runner" x="470" y="150" width="240" height="220" rx="12"/>
+  <text class="runner-label" x="590" y="172">ACTIONS RUNNER</text>
+  <rect class="box" x="490" y="185" width="200" height="64" rx="10"/>
+  <text class="label" x="590" y="212">Flask</text>
+  <text class="sub" x="590" y="232">+ Jinja</text>
+  <rect class="box" x="490" y="280" width="200" height="64" rx="10"/>
+  <text class="label" x="590" y="307">Static site</text>
+  <text class="sub" x="590" y="327">HTML + JSON</text>
+  <path class="flow" d="M590 251V278"/>
+
+  <!-- Cloudflare -->
+  <rect class="box" x="825" y="160" width="140" height="80" rx="10"/>
+  <text class="label" x="895" y="195">Pages</text>
+  <text class="sub" x="895" y="217">static site</text>
+  <rect class="box" x="825" y="280" width="140" height="80" rx="10"/>
+  <text class="label" x="895" y="315">Global</text>
+  <text class="sub" x="895" y="337">CDN</text>
+
+  <!-- Reader -->
+  <rect class="box" x="1055" y="220" width="140" height="80" rx="10"/>
+  <text class="label" x="1125" y="255">Browser</text>
+  <text class="sub" x="1125" y="277">search + theme</text>
+
+  <!-- Flow between groups -->
+  <path class="flow" d="M214 260H276"/>
+  <text class="note" x="245" y="250">git push</text>
+  <path class="flow" d="M414 260H466"/>
+  <text class="note" x="440" y="236">manual</text>
+  <text class="note" x="440" y="250">run</text>
+  <path class="flow" d="M714 260H806"/>
+  <text class="note" x="760" y="236">wrangler</text>
+  <text class="note" x="760" y="250">deploy</text>
+  <path class="flow" d="M984 260H1036"/>
+  <text class="note" x="1010" y="250">HTTPS</text>
+
+  <!-- Planned automation -->
+  <path class="planned" d="M505 392V418"/>
+  <rect class="planned" x="300" y="420" width="410" height="50" rx="10"/>
+  <text class="planned-text" x="505" y="450">Planned: auto deploy + security scans</text>
+</svg>
